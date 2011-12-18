@@ -34,6 +34,7 @@
           Item waterItem=null;        %>
           
       <% Cookie[] cookies = request.getCookies();
+        if(cookies!=null) {
           for(int i=0;i<cookies.length;i++) {
               if(cookies[i].getName().equals("cafeQuantity")) {
                    cafeQuantity_str=cookies[i].getValue();
@@ -53,7 +54,8 @@
               if(cookies[i].getName().equals("waterSum")) {
                    waterSum_str=cookies[i].getValue();
                       }
-                    }               %>   
+                    }      
+                  }        %>   
                     
         <% if(request.getAttribute("cafe")!=null) { 
                         cafeItem = (Item)request.getAttribute("cafe");
